@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 REM Specify the root directories where you want to start unraring files
-set "root_directories=P:\Media\Downloads"
+set "root_directories=<windows/folder/path>" # for example D:\network\Drive
 
 REM Sets the Min file size represents 512MB
 REM Minimum file size in bytes (1GB = 1073741824 bytes)
