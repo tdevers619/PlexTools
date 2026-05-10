@@ -62,12 +62,16 @@ def tmdb_get(url, params=None):
     return response.json()
 
 def get_show_name():
-    show_input = input(f"\nEnter show name [{DEFAULT_SHOW_NAME}] or type Q to quit: ").strip()
+    show_input = input("\nEnter show name or type Q to quit: ").strip()
 
     if show_input.lower() in ("q", "quit", "exit"):
         return None
 
-    return show_input or DEFAULT_SHOW_NAME
+    if not show_input:
+        print("Show name is required.")
+        return get_show_name()  # Recurse to ask again
+
+    return show_input
 
 def ask_fix_another_show():
     answer = input("\nWould you like to fix another show? [y/N]: ").strip().lower()
